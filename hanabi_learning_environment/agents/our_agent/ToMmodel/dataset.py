@@ -196,7 +196,7 @@ def data_process(act_seq, obs, my_id):
         discard = [encode_card(card['color'], card['rank'])
                    for card in discard]
         discard = discard[-max_discard:]
-        discard.extend([[1.0/25 for _ in range(25)]
+        discard.extend([encode_card(None, None)
                        for _ in range(max_discard-len(discard))])
         cardknow = obs['card_knowledge']
         ck = []
